@@ -15,7 +15,8 @@ public class DemoController {
         customer.setFirstName(first);
         customer.setLastName(last);
         customerRepository.save(customer);
-        return "Added new customer to repo!";
+        int id = customer.getId();
+        return String.format("Added new customer to repo! Customer id is %d", id);
     }
 
     @GetMapping("/list") // GET
